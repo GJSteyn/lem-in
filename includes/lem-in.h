@@ -26,8 +26,9 @@ typedef struct		s_vect2
 typedef struct		s_room
 {
 	size_t			idx;
+	int				open;
 	char			*name;
-	struct s_room	**conx;
+	t_list			*conx;
 	t_vect2			coords;
 	t_rmflag		type;
 }					t_room;
