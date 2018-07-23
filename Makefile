@@ -6,12 +6,12 @@
 #    By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/23 09:25:10 by gsteyn            #+#    #+#              #
-#    Updated: 2018/07/23 09:29:20 by gsteyn           ###   ########.fr        #
+#    Updated: 2018/07/23 15:26:22 by gsteyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME     = lem-in
-SRC      = main.c parse_input.c get_map.c
+SRC      = main.c parse_input.c get_map.c init_ants.c init_rooms.c
 SDIR 	 = srcs
 ODIR 	 = bin
 SRCS 	 = $(patsubst %.c, srcs/%.c, $(FILES))

@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:16:32 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/23 10:29:42 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/23 15:28:26 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef enum		e_rmflag { start, end, normal } t_rmflag;
 typedef struct		s_room
 {
 	size_t			idx;
-	int				open;
+	int				occupied;
 	char			*name;
 	t_list			*conx;
 	t_vect2			coords;
@@ -39,6 +39,9 @@ int 		        is_start(char *str);
 int 		        is_comment(char *str);
 
 t_list				*get_map(void);
+
 t_list				*init_ants(t_list *maplines);
+
+t_list              *init_rooms(t_list *maplines);
 
 #endif
