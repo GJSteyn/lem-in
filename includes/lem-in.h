@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:16:32 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/23 16:39:57 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/23 17:44:16 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ int					valid_input(t_list *input);
 
 t_list				*get_map(void);
 
-t_list				*init_ants(t_list *maplines);
+t_list				*init_ants(t_list *input);
 
-t_list              *init_rooms(t_list *maplines);
+t_list              *init_rooms(t_list *input);
 
 #endif
