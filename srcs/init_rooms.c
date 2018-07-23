@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:43:59 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/23 18:25:08 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/23 18:33:26 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_list          *init_rooms(t_list *in)
     size_t      idx;
     t_list      *ret;
 
-    index = 0;
+    idx = 0;
     while (!is_room((char *)in->content))
         in = in->next;
     while (in)
