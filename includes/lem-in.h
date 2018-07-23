@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:16:32 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/23 15:28:26 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/23 16:14:45 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ typedef struct		s_ant
 int					is_end(char *str);
 int 		        is_start(char *str);
 int 		        is_comment(char *str);
+int					is_room(char *str);
+int					is_link(char *str);
 
 t_list				*get_map(void);
 
