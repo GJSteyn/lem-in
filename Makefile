@@ -6,17 +6,17 @@
 #    By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/23 09:25:10 by gsteyn            #+#    #+#              #
-#    Updated: 2018/07/24 06:57:33 by gsteyn           ###   ########.fr        #
+#    Updated: 2018/07/24 07:16:17 by gsteyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME     = lem-in
-SRC      = main.c parse_input.c get_map.c init_ants.c init_rooms.c \
+SRC      = main.c parse_input.c get_input.c init_ants.c init_rooms.c \
 		   check_input.c get_links.c
 SDIR 	 = srcs
 ODIR 	 = bin
-SRCS 	 = $(patsubst %.c, srcs/%.c, $(FILES))
-OBJS 	 = $(patsubst %.c, bin/%.o, $(FILES)) ./bin/get_next_line.o
+SRCS 	 = $(patsubst %.c, srcs/%.c, $(SRC))
+OBJS 	 = $(patsubst %.c, bin/%.o, $(SRC)) bin/get_next_line.o
 FLAGS 	 = -Wall -Wextra -Werror
 INCLUDES = -I libft -I gnl -I includes
 LIBS 	 = libft/libft.a
@@ -24,8 +24,11 @@ GNL 	 = gnl/get_next_line.c
 
 all: $(NAME)
 
-$(NAME1): $(OBJS) libs gnl
-	gcc -o $(NAME1) $(FLAGS) $(INCLUDES) $(OBJS) srcs/push_swap.c -L. $(LIBS)
+$(NAME): gnl $(OBJS) libs
+	gcc -o $(NAME) $(FLAGS) $(INCLUDES) $(OBJS) -L. $(LIBS)
+
+$(ODIR)/%.o: $(SDIR)/%.c
+	gcc -c $(INCLUDES) $(FLAGS) -o $@ $<
 
 libs:
 	make -C ./libft fclean && make -C ./libft

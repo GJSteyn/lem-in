@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:16:32 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/24 05:58:20 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/24 07:14:26 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int					is_link(char *str);
 
 int					valid_input(t_list *input);
 
-t_list				*get_map(void);
+t_list				*get_input(void);
 
 t_list              *init_rooms(t_list *input);
 
