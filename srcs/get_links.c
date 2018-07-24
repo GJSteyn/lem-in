@@ -34,9 +34,9 @@ static void add_conx(t_list *rooms, char *link)
     split = ft_strsplit(link, '-');
     room1 = get_room(split[0], rooms);
     room2 = get_room(split[1], rooms);
-    new = ft_lstnew(room1, sizeof(t_room));
+    new = ft_lstnew(&room1, sizeof(t_room*));
     ft_lstappend(&room2->conx, new);
-    new = ft_lstnew(room2, sizeof(t_room));
+    new = ft_lstnew(&room2, sizeof(t_room*));
     ft_lstappend(&room1->conx, new);
 }
 
