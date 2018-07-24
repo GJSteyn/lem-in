@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem-in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gsteyn <gsteyn@student.wethinkcode.co.z    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:16:32 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/24 14:09:14 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/24 17:36:29 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct		s_room
 {
 	size_t			idx;
 	int				occupied;
+	int				heuristic;
 	char			*name;
 	t_list			*conx;
 	t_vect2			coords;
@@ -56,5 +57,7 @@ t_list				*init_ants(t_list *input, t_list *rooms);
 void				get_links(t_list *rooms, t_list *input);
 
 void				find_path(t_list *ants);
+
+void		        get_heuristic(t_list *rooms);
 
 #endif

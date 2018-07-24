@@ -60,6 +60,8 @@ t_list          *init_ants(t_list *in, t_list *rooms)
     else
     {
         num_ants = ft_atoi((char*)in->content);
+        if (num_ants == 0)
+            ft_error("No ants? What's the point?");
         while (idx < (size_t)num_ants)
             add_ant(&ret, idx++, start);
     }

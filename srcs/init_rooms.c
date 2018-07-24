@@ -20,6 +20,7 @@ static t_room   *new_room(size_t idx, char *nm, t_vect2 crd, t_rmflag fl)
     ret = (t_room *)ft_memalloc(sizeof(t_room));
     ret->idx = idx;
     ret->occupied = 0;
+    ret->heuristic = 0;
     ret->name = ft_strdup(nm);
     ret->conx = NULL;
     ret->coords = crd;

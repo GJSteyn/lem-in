@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+         #
+#    By: gsteyn <gsteyn@student.wethinkcode.co.z    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/23 09:25:10 by gsteyn            #+#    #+#              #
-#    Updated: 2018/07/24 11:30:28 by gsteyn           ###   ########.fr        #
+#    Updated: 2018/07/24 17:34:52 by gsteyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME     = lem-in
 SRC      = main.c parse_input.c get_input.c init_ants.c init_rooms.c \
-		   check_input.c get_links.c find_path.c dijkstra.c
+		   check_input.c get_links.c find_path.c dijkstra.c get_heuristic.c
 SDIR 	 = srcs
 ODIR 	 = bin
 SRCS 	 = $(patsubst %.c, srcs/%.c, $(SRC))
