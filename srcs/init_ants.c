@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:41:25 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/23 18:47:04 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/24 07:06:41 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ t_room          *get_start(t_list *rooms)
         rooms = rooms->next;
     }
     ft_error("Start room not found - init_ants.c");
+    return (NULL);
 }
 
 t_list          *init_ants(t_list *in, t_list *rooms)
@@ -51,6 +52,7 @@ t_list          *init_ants(t_list *in, t_list *rooms)
 
     idx = 0;
     start = get_start(rooms);
+    ret = NULL;
     while (is_comment((char*)in->content))
         in = in->next;
     if (!ft_is_num((char*)in->content))
@@ -58,7 +60,7 @@ t_list          *init_ants(t_list *in, t_list *rooms)
     else
     {
         num_ants = ft_atoi((char*)in->content);
-        while (idx < num_ants)
+        while (idx < (size_t)num_ants)
             add_ant(&ret, idx++, start);
     }
     return (ret);

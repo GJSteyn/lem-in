@@ -6,7 +6,7 @@
 #    By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/23 09:25:10 by gsteyn            #+#    #+#              #
-#    Updated: 2018/07/24 07:16:17 by gsteyn           ###   ########.fr        #
+#    Updated: 2018/07/24 09:02:47 by gsteyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,14 +24,22 @@ GNL 	 = gnl/get_next_line.c
 
 all: $(NAME)
 
-$(NAME): gnl $(OBJS) libs
+$(NAME): gnl $(OBJS) libs $(ODIR)
 	gcc -o $(NAME) $(FLAGS) $(INCLUDES) $(OBJS) -L. $(LIBS)
+
+$(ODIR):
+	mkdir -p $(ODIR)
 
 $(ODIR)/%.o: $(SDIR)/%.c
 	gcc -c $(INCLUDES) $(FLAGS) -o $@ $<
 
+li: $(OBJS)
+
+#libs:
+#	make -C ./libft fclean && make -C ./libft
+
 libs:
-	make -C ./libft fclean && make -C ./libft
+	make -C ./libft
 
 gnl:
 	gcc -c $(FLAGS) $(INCLUDES) -o ./bin/get_next_line.o $(GNL)
@@ -40,6 +48,6 @@ clean:
 	rm -rf $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME1) $(NAME2)
+	rm -rf $(NAME)
 
 re: fclean all

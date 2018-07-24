@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 05:47:26 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/24 06:54:36 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/24 10:32:18 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,24 @@ static t_room   *get_room(char *name, t_list *rooms)
     return (NULL);
 }
 
-static void     add_conx(t_room *room, t_room *conx)
+static void     add_conx(t_list *rooms, char *link)
 {
+    char            **split;
     t_list          *new;
+    t_room          *room1;
+    t_room          *room2;
 
-    new = ft_lstnew(conx, sizeof(t_room*));
-    ft_lstappend(&room->conx, new);
+    split = ft_strsplit(link, '-');
+    room1 = get_room(split[0], rooms);
+    room2 = get_room(split[1], rooms);
+    new = ft_lstnew(room1, sizeof(t_room));
+    ft_lstappend(&room2->conx, new);
+    new = ft_lstnew(room2, sizeof(t_room));
+    ft_lstappend(&room1->conx, new);
 }
 
 void            get_links(t_list *rooms, t_list *in)
 {
-    t_room      *tmp;
-    t_room      *tmp2;
-    char        **split;
-
     while (!is_link((char*)in->content))
         in = in->next;
     if (!in)
@@ -47,13 +51,7 @@ void            get_links(t_list *rooms, t_list *in)
         if (is_comment((char*)in->content))
             ;
         else if (is_link((char*)in->content))
-        {
-            split = ft_strsplit((char*)in->content, '-');
-            tmp = get_room(split[0], rooms);
-            tmp2 = get_room(split[1], rooms);
-            add_conx(tmp, tmp2);
-            ft_strldel(&split);
-        }
+            add_conx(rooms, (char*)in->content);
         else
         {
             ft_putstr_fd("Found unexpected line after getting links (get_links.c)", 2);

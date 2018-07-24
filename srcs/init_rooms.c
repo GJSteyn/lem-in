@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:43:59 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/23 18:33:26 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/24 09:03:38 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@ t_list          *init_rooms(t_list *in)
     t_list      *ret;
 
     idx = 0;
-    while (!is_room((char *)in->content))
+    ret = NULL;
+    while (in && !is_room((char *)in->content) && !is_start((char*)in->content)
+        && !is_end((char*)in->content))
         in = in->next;
     while (in)
     {
@@ -54,7 +56,7 @@ t_list          *init_rooms(t_list *in)
             ;
         else if (is_room((char *)in->content))
             add_room(&ret, (char*)in->content, idx++, normal);
-        else if (is_start((char*)in->contnet))
+        else if (is_start((char*)in->content))
         {
             in = in->next;
             add_room(&ret, (char*)in->content, idx++, start);
@@ -66,7 +68,8 @@ t_list          *init_rooms(t_list *in)
         }
         else if (is_link((char*)in->content))
             break ;
-        in = in->next;
+        if (in->next)
+            in = in->next;
     }
     return (ret);
 }
