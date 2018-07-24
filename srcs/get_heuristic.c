@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.wethinkcode.co.z    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 17:34:20 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/24 17:48:48 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/24 19:36:04 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void         dist_from_end(t_list *rooms)
     end->heuristic = dist;
     while (conx)
     {
-        conroom = (t_room*)conx->content;
+        conroom = *(t_room**)conx->content;
     }
 }
 
