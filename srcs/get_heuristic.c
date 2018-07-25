@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 17:34:20 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 05:33:59 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 06:32:54 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,34 @@ static t_room		*get_end(t_list *rooms)
 			return (room);
 		rooms = rooms->next;
 	}
+	return (NULL);
+}
+
+static void			recurse_conx(t_room *room, int dist)
+{
+	t_list		*tmp;
+	t_room		*conroom;
+
+	room->heuristic = dist;
+	tmp = room->conx;
+	ft_putendl_fd(room->name, 2);
+	while (tmp)
+	{
+		conroom = *(t_room**)tmp->content;
+		if (conroom->heuristic == 0 && conroom->type != end)
+			recurse_conx(conroom, dist + 1);
+		tmp = tmp->next;
+	}
 }
 
 static void			dist_from_end(t_list *rooms)
 {
 	t_room		*end;
-	t_list		*conx;
-	t_room		*conroom;
 	int			dist;
 
 	dist = 0;
 	end = get_end(rooms);
-	conx = end->conx;
-	end->heuristic = dist;
-	while (conx)
-	{
-		conroom = *(t_room**)conx->content;
-	}
+	recurse_conx(end, dist);
 }
 
 void				get_heuristic(t_list *rooms)

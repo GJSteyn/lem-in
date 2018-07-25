@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:15:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 05:40:48 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 06:32:44 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int			main(void)
 	rooms = init_rooms(input);
 	get_links(rooms, input);
 	ants = init_ants(input, rooms);
-	find_path(ants);
+	get_heuristic(rooms);
+	//find_path(ants);
 	return (0);
 }
