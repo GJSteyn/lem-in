@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 11:51:18 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 05:42:03 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 12:00:51 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,6 @@ int			is_link(char *str)
 	while (split[i])
 		i++;
 	if (i != 2)
-	{
-		ft_strldel(&split);
-		return (0);
-	}
-	if (!ft_is_num(split[0]) || !ft_is_num(split[1]))
 	{
 		ft_strldel(&split);
 		return (0);
