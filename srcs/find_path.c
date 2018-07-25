@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 11:29:21 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 12:41:22 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 12:46:24 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		find_path(t_list *ants)
 	while (ants)
 	{
 		ant = (t_ant*)ants->content;
-		dijkstra(ant);
+		brute_end_dist(ant);
 		ants = ants->next;
 	}
 }

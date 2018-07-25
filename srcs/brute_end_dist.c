@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dijkstra.c                                         :+:      :+:    :+:   */
+/*   brute_end_dist.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 11:30:38 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 12:07:28 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 12:47:08 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static t_room	*room_with_smallest_heuristic(t_list *conx)
 	return (ret);
 }
 
-void			dijkstra(t_ant *ant)
+void			brute_end_dist(t_ant *ant)
 {
 	t_room		*best;
 
