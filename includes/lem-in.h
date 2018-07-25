@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:16:32 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 07:45:40 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 12:35:39 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,7 @@ void				dijkstra(t_ant *ant);
 void				get_heuristic(t_list *rooms);
 
 void				move_ant(t_ant *ant, t_room *room);
+
+int					rooms_connect_to_end(t_list *rooms);
 
 #endif

@@ -6,14 +6,14 @@
 #    By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/23 09:25:10 by gsteyn            #+#    #+#              #
-#    Updated: 2018/07/25 07:45:23 by gsteyn           ###   ########.fr        #
+#    Updated: 2018/07/25 12:35:14 by gsteyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME     = lem-in
 SRC      = main.c parse_input.c get_input.c init_ants.c init_rooms.c \
 		   check_input.c get_links.c find_path.c dijkstra.c get_heuristic.c \
-		   move_ant.c
+		   move_ant.c rooms_connect_to_end.c
 SDIR 	 = srcs
 ODIR 	 = bin
 SRCS 	 = $(patsubst %.c, srcs/%.c, $(SRC))
