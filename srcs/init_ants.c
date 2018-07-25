@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:41:25 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 06:42:24 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 08:09:49 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ t_list				*init_ants(t_list *in, t_list *rooms)
 	t_list		*ret;
 	t_room		*start;
 
-	idx = 0;
+	idx = 1;
 	start = get_start(rooms);
 	ret = NULL;
 	while (is_comment((char*)in->content))
@@ -63,7 +63,7 @@ t_list				*init_ants(t_list *in, t_list *rooms)
 		if (num_ants == 0)
 			ft_error("No ants? What's the point?");
 		start->occupied = 1;
-		while (idx < (size_t)num_ants)
+		while (idx <= (size_t)num_ants)
 			add_ant(&ret, idx++, start);
 	}
 	return (ret);
