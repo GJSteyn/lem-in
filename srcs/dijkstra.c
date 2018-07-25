@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 11:30:38 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 08:07:30 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 12:07:28 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ void			dijkstra(t_ant *ant)
 		if (!best)
 			return ;
 		move_ant(ant, best);
+		ft_putchar_fd(' ', 2);
 	}
 }
