@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:41:25 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 05:38:51 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 06:42:24 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void			add_ant(t_list **dst, size_t num, t_room *room)
 	ft_lstappend(dst, tmp);
 }
 
-t_room				*get_start(t_list *rooms)
+static t_room		*get_start(t_list *rooms)
 {
 	while (rooms)
 	{
@@ -62,6 +62,7 @@ t_list				*init_ants(t_list *in, t_list *rooms)
 		num_ants = ft_atoi((char*)in->content);
 		if (num_ants == 0)
 			ft_error("No ants? What's the point?");
+		start->occupied = 1;
 		while (idx < (size_t)num_ants)
 			add_ant(&ret, idx++, start);
 	}
