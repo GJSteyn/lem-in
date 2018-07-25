@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:16:32 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 05:42:28 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 07:45:40 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,10 @@ void				get_links(t_list *rooms, t_list *input);
 
 void				find_path(t_list *ants);
 
+void				dijkstra(t_ant *ant);
+
 void				get_heuristic(t_list *rooms);
+
+void				move_ant(t_ant *ant, t_room *room);
 
 #endif
