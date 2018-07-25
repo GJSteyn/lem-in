@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 17:34:20 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 07:29:27 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 11:47:40 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ static void			recurse_conx(t_room *room, int dist)
 		if (conroom->heuristic == 0 && conroom->type != end)
 			conroom->heuristic = dist + 1;
 		tmp = tmp->next;
+		// ft_putstr_fd(conroom->name, 2);
+		// ft_putendl_fd(":", 2);
+		// ft_putnbr_fd(dist, 2);
+		// ft_putchar_fd('\n', 2);
 	}
 	tmp = room->conx;
 	while (tmp)

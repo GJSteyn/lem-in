@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 05:47:26 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 05:36:57 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 12:05:48 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static void			add_conx(t_list *rooms, char *link)
 	ft_lstappend(&room2->conx, new);
 	new = ft_lstnew(&room2, sizeof(t_room*));
 	ft_lstappend(&room1->conx, new);
+	ft_strldel(&split);
 }
 
 void				get_links(t_list *rooms, t_list *in)

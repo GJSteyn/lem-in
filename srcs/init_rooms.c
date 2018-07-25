@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:43:59 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 05:39:57 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 10:25:31 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,7 @@ t_list				*init_rooms(t_list *in)
 		}
 		else if (is_link((char*)in->content))
 			break ;
-		if (in->next)
-			in = in->next;
+		in = in->next;
 	}
 	return (ret);
 }

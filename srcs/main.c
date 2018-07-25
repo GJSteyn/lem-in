@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:15:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 08:06:52 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 12:03:22 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,16 @@ int			main(void)
 	int			num_ants;
 	int			finished_ants;
 
+	// ft_putstr_fd("Getting input\n", 2);
 	input = get_input();
+	// ft_putstr_fd("Getting rooms\n", 2);
 	rooms = init_rooms(input);
+	// ft_putstr_fd("Getting links\n", 2);
 	get_links(rooms, input);
+	// ft_putstr_fd("Getting ants\n", 2);
 	ants = init_ants(input, rooms);
 	num_ants = ft_lstlen(ants);
+	// ft_putstr_fd("Getting heuristic\n", 2);
 	get_heuristic(rooms);
 	// while (rooms)
 	// {
