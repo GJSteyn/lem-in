@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   find_path.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsteyn <gsteyn@student.wethinkcode.co.z    +#+  +:+       +#+        */
+/*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 11:29:21 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/24 19:36:08 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 05:42:44 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem-in.h"
 
-void        find_path(t_list *ants)
+void		find_path(t_list *ants)
 {
-    
+
 }

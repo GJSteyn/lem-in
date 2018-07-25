@@ -3,45 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   get_heuristic.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsteyn <gsteyn@student.wethinkcode.co.z    +#+  +:+       +#+        */
+/*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 17:34:20 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/24 19:36:04 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/25 05:33:59 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem-in.h"
 
-static t_room       *get_end(t_list *rooms)
+static t_room		*get_end(t_list *rooms)
 {
-    t_room      *room;
-    while (rooms)
-    {
-        room = (t_room*)rooms->content;
-        if (room->type == end)
-            return (room);
-        rooms = rooms->next;
-    }
+	t_room		*room;
+
+	while (rooms)
+	{
+		room = (t_room*)rooms->content;
+		if (room->type == end)
+			return (room);
+		rooms = rooms->next;
+	}
 }
 
-static void         dist_from_end(t_list *rooms)
+static void			dist_from_end(t_list *rooms)
 {
-    t_room  *end;
-    t_list  *conx;
-    t_room  *conroom;
-    int     dist;
+	t_room		*end;
+	t_list		*conx;
+	t_room		*conroom;
+	int			dist;
 
-    dist = 0;
-    end = get_end(rooms);
-    conx = end->conx;
-    end->heuristic = dist;
-    while (conx)
-    {
-        conroom = *(t_room**)conx->content;
-    }
+	dist = 0;
+	end = get_end(rooms);
+	conx = end->conx;
+	end->heuristic = dist;
+	while (conx)
+	{
+		conroom = *(t_room**)conx->content;
+	}
 }
 
-void                get_heuristic(t_list *rooms)
+void				get_heuristic(t_list *rooms)
 {
-    dist_from_end(rooms);
+	dist_from_end(rooms);
 }
