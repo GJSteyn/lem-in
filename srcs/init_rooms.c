@@ -6,11 +6,11 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:43:59 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 10:25:31 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/26 12:29:16 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 #include "libft.h"
 
 static t_room		*new_room(size_t idx, char *nm, t_vect2 crd, t_rmflag fl)

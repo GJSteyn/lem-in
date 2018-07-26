@@ -6,11 +6,11 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:14:24 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 05:35:37 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/26 12:29:03 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 #include "libft.h"
 #include "get_next_line.h"
 

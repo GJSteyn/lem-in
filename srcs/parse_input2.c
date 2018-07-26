@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parse_input2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsteyn <gsteyn@student.wethinkcode.co.z    +#+  +:+       +#+        */
+/*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 07:25:42 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/26 07:26:59 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/26 12:29:34 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
 int         is_command(char *str)
 {

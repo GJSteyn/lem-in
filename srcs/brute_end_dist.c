@@ -6,11 +6,11 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 11:30:38 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 12:47:08 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/26 12:28:40 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 #include "limits.h"
 
 static t_room	*room_with_smallest_heuristic(t_list *conx)

@@ -6,11 +6,11 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/25 12:30:28 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 12:36:39 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/26 12:28:16 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
 int			rooms_connect_to_end(t_list *rooms)
 {

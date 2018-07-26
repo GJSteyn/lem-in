@@ -6,11 +6,11 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 17:34:20 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 11:47:40 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/26 12:28:46 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
 static t_room		*get_end(t_list *rooms)
 {

@@ -6,11 +6,11 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:41:25 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 08:09:49 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/26 12:29:11 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 #include "libft.h"
 
 static t_ant		*new_ant(size_t num, t_room *room)
