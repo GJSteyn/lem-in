@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 16:39:13 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/26 12:53:18 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/26 14:09:08 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,34 @@ static void		check_all_valid(t_list *input)
 	}
 }
 
+static int		start_and_end_valid(t_list *in)
+{
+	while (in)
+	{
+		if (is_start((char*)in->content))
+		{
+			if (!in->next)
+				return (0);
+			if (!is_room((char*)in->next->content))
+				return (0);
+		}
+		else if (is_end((char*)in->content))
+		{
+			if (!in->next)
+				return (0);
+			if (!is_room((char*)in->next->content))
+				return (0);
+		}
+		in = in->next;
+	}
+	return (1);
+}
+
 int				valid_input(t_list *in)
 {
 	check_all_valid(in);
+	if (!start_and_end_valid(in))
+		ft_error("Invalid start or end");
 	while (is_comment((char*)in->content))
 		in = in->next;
 	if (!ft_is_num((char*)in->content))

@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 13:01:03 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/26 13:40:01 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/26 15:55:20 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ static int		end_not_connected(t_list *rooms)
 
 	start = get_start(rooms);
 	if (start->heuristic == 0)
-		ft_error("Start not connected to end");
+		return (0);
+	return (1);
 }
 
 int				valid_map(t_list *rooms)
