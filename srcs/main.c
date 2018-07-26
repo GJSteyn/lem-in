@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gsteyn <gsteyn@student.wethinkcode.co.z    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:15:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 12:03:22 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/26 09:16:52 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int			main(void)
 
 	// ft_putstr_fd("Getting input\n", 2);
 	input = get_input();
+	if (!valid_input(input))
+		return (0);
 	// ft_putstr_fd("Getting rooms\n", 2);
 	rooms = init_rooms(input);
 	// ft_putstr_fd("Getting links\n", 2);

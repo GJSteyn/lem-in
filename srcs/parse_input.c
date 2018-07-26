@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gsteyn <gsteyn@student.wethinkcode.co.z    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 11:51:18 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/25 12:00:51 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/26 07:38:32 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int			is_comment(char *str)
 	strlen = ft_strlen(str);
 	if (strlen == 0)
 		return (0);
-	if (strlen < 2)
+	if (strlen == 1)
 		if (str[0] == '#')
 			return (1);
 	if (str[0] == '#' && str[1] != '#')
