@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:15:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/26 12:28:11 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/26 13:40:53 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int			main(void)
 	rooms = init_rooms(input);
 	// ft_putstr_fd("Getting links\n", 2);
 	get_links(rooms, input);
+	if (!valid_map(rooms))
+		ft_error("Not a valid map");
 	// ft_putstr_fd("Getting ants\n", 2);
 	ants = init_ants(input, rooms);
 	num_ants = ft_lstlen(ants);
