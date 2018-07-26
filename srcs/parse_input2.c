@@ -6,15 +6,15 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 07:25:42 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/26 12:29:34 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/26 12:31:51 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int         is_command(char *str)
+int			is_command(char *str)
 {
-    if (strncmp(str, "##", 2) == 0)
-        return (1);
-    return (0);
+	if (strncmp(str, "##", 2) == 0)
+		return (1);
+	return (0);
 }
