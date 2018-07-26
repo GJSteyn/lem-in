@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+         #
+#    By: gsteyn <gsteyn@student.wethinkcode.co.z    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/23 09:25:10 by gsteyn            #+#    #+#              #
-#    Updated: 2018/07/25 12:47:33 by gsteyn           ###   ########.fr        #
+#    Updated: 2018/07/26 07:27:28 by gsteyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME     = lem-in
 SRC      = main.c parse_input.c get_input.c init_ants.c init_rooms.c \
 		   check_input.c get_links.c find_path.c brute_end_dist.c \
-		   get_heuristic.c move_ant.c rooms_connect_to_end.c
+		   get_heuristic.c move_ant.c rooms_connect_to_end.c parse_input2.c
 SDIR 	 = srcs
 ODIR 	 = bin
 SRCS 	 = $(patsubst %.c, srcs/%.c, $(SRC))
@@ -35,9 +35,6 @@ $(ODIR)/%.o: $(SDIR)/%.c
 	gcc -c $(INCLUDES) $(FLAGS) -o $@ $<
 
 li: $(OBJS)
-
-#libs:
-#	make -C ./libft fclean && make -C ./libft
 
 libs:
 	make -C ./libft
