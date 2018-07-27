@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:15:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/26 13:40:53 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/27 18:04:14 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int			main(void)
 
 	// ft_putstr_fd("Getting input\n", 2);
 	input = get_input();
+	// ft_putstr_fd("Checking valid input\n", 2);
 	if (!valid_input(input))
 		return (0);
 	// ft_putstr_fd("Getting rooms\n", 2);
@@ -68,5 +69,8 @@ int			main(void)
 		if (finished_ants != num_ants)
 			ft_putchar_fd('\n', 2);
 	}
+	ft_putstr_fd("Destroying shit\n", 2);
+	destroy_rooms(&rooms);
+	while (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:16:32 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/26 13:01:53 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/27 18:00:15 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,7 @@ void				move_ant(t_ant *ant, t_room *room);
 int					rooms_connect_to_end(t_list *rooms);
 
 int					valid_map(t_list *rooms);
+
+void				destroy_rooms(t_list **rooms);
 
 #endif
