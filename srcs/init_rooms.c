@@ -6,12 +6,21 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:43:59 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/26 12:55:47 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/27 13:45:53 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 #include "libft.h"
+
+static void			destroy_room(t_room *room)
+{
+	void		*name;
+
+	name = room->name;
+	ft_memdel(&name);
+	ft_memdel((void**)(&room));
+}
 
 static t_room		*new_room(size_t idx, char *nm, t_vect2 crd, t_rmflag fl)
 {
@@ -33,11 +42,14 @@ static void			add_room(t_list **dst, char *rmstr, size_t idx, t_rmflag fl)
 	char		**split;
 	t_vect2		coords;
 	t_list		*tmp;
+	t_room		*newroom;
 
 	split = ft_strsplit(rmstr, ' ');
 	coords = ft_itovect(ft_atoi(split[1]), ft_atoi(split[2]));
-	tmp = ft_lstnew(new_room(idx, split[0], coords, fl), sizeof(t_room));
+	newroom = new_room(idx, split[0], coords, fl);
+	tmp = ft_lstnew(newroom, sizeof(t_room));
 	ft_lstappend(dst, tmp);
+	destroy_room(newroom);
 	ft_strldel(&split);
 }
 
