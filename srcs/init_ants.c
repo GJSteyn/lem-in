@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:41:25 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/26 12:29:11 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/27 15:04:42 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,12 @@ static t_ant		*new_ant(size_t num, t_room *room)
 static void			add_ant(t_list **dst, size_t num, t_room *room)
 {
 	t_list	*tmp;
+	t_ant	*ant;
 
-	tmp = ft_lstnew(new_ant(num, room), sizeof(t_ant));
+	ant = new_ant(num, room);
+	tmp = ft_lstnew(ant, sizeof(t_ant));
 	ft_lstappend(dst, tmp);
+	ft_memdel((void**)(&ant));
 }
 
 static t_room		*get_start(t_list *rooms)
