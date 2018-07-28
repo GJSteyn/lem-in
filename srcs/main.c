@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:15:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/27 18:04:14 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/28 12:33:09 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,30 +37,16 @@ int			main(void)
 	int			num_ants;
 	int			finished_ants;
 
-	// ft_putstr_fd("Getting input\n", 2);
 	input = get_input();
-	// ft_putstr_fd("Checking valid input\n", 2);
 	if (!valid_input(input))
 		return (0);
-	// ft_putstr_fd("Getting rooms\n", 2);
 	rooms = init_rooms(input);
-	// ft_putstr_fd("Getting links\n", 2);
 	get_links(rooms, input);
 	if (!valid_map(rooms))
 		ft_error("Not a valid map");
-	// ft_putstr_fd("Getting ants\n", 2);
 	ants = init_ants(input, rooms);
 	num_ants = ft_lstlen(ants);
-	// ft_putstr_fd("Getting heuristic\n", 2);
 	get_heuristic(rooms);
-	// while (rooms)
-	// {
-	// 	ft_putstr_fd(((t_room*)rooms->content)->name, 2);
-	// 	ft_putendl_fd(":", 2);
-	// 	ft_putnbr_fd(((t_room*)rooms->content)->heuristic, 2);
-	// 	ft_putchar_fd('\n', 2);
-	// 	rooms = rooms->next;
-	// }
 	finished_ants = 0;
 	while (finished_ants != num_ants)
 	{
@@ -69,8 +55,8 @@ int			main(void)
 		if (finished_ants != num_ants)
 			ft_putchar_fd('\n', 2);
 	}
-	ft_putstr_fd("Destroying shit\n", 2);
 	destroy_rooms(&rooms);
-	while (1);
+	destroy_ants(&ants);
+	destroy_input(&input);
 	return (0);
 }
