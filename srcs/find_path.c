@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 11:29:21 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/28 13:26:43 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/28 14:12:13 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,14 @@ static int	count_finished_ants(t_list *ants)
 static void	move_ants(t_list *ants)
 {
 	t_ant	*ant;
+	int		first;
 
+	first = 1;
 	while (ants)
 	{
 		ant = (t_ant*)ants->content;
-		brute_end_dist(ant);
+		if (brute_end_dist(ant, first) && first != 0)
+			first = 0;
 		ants = ants->next;
 	}
 }
