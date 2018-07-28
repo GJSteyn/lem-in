@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/28 13:35:23 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/28 13:37:09 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/28 13:38:54 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void		print_input(t_list *input)
 {
 	while (input)
 	{
-		ft_putstr_fd((char*)input->content, 1);
+		ft_putendl_fd((char*)input->content, 1);
 		input = input->next;
 	}
+	ft_putchar_fd('\n', 1);
 }
