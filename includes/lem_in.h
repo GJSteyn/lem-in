@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:16:32 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/28 13:36:17 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/28 13:44:35 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ void				print_input(t_list *input);
 void				destroy_rooms(t_list **rooms);
 void				destroy_ants(t_list **ants);
 void				destroy_input(t_list **input);
+void				destroy_lists(t_list **rooms, t_list **ants, t_list **in);
 
 #endif

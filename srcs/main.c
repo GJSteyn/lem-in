@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:15:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/28 13:35:13 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/28 13:43:07 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int			main(void)
 	t_list		*rooms;
 	t_list		*ants;
 
+	rooms = NULL;
+	ants = NULL;
 	input = get_input();
 	if (!valid_input(input))
 	{
@@ -29,16 +31,13 @@ int			main(void)
 	get_links(rooms, input);
 	if (!valid_map(rooms))
 	{
-		destroy_input(&input);
-		destroy_rooms(&rooms);
+		destroy_lists(&rooms, NULL, &input);
 		return (0);
 	}
 	ants = init_ants(input, rooms);
 	get_heuristic(rooms);
 	print_input(input);
 	find_path(ants);
-	destroy_rooms(&rooms);
-	destroy_ants(&ants);
-	destroy_input(&input);
+	destroy_lists(&rooms, &ants, &input);
 	return (0);
 }
