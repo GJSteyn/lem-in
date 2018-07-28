@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 11:30:38 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/26 12:28:40 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/28 13:27:41 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ void			brute_end_dist(t_ant *ant)
 		best = room_with_smallest_heuristic(ant->room->conx);
 		if (!best)
 			return ;
-		move_ant(ant, best);
-		ft_putchar_fd(' ', 2);
+		if (best->heuristic < ant->room->heuristic)
+		{
+			move_ant(ant, best);
+			ft_putchar_fd(' ', 2);
+		}
 	}
 }
