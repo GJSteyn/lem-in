@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 05:47:26 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/31 09:34:49 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/31 12:11:28 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,10 @@ void				get_links(t_list *rooms, t_list *in)
 		else if (is_command((char*)in->content))
 			;
 		else if (is_link((char *)in->content))
+		{
+			ft_putstr_fd("Adding\n", 2);
 			add_conx(rooms, (char *)in->content);
+		}
 		else if (is_link((char*)in->next->content))
 		{
 			ft_putstr_fd("Bad line in links (get_links.c)", 2);
