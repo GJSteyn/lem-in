@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 11:29:21 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/28 14:12:13 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/31 07:46:03 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ void		find_path(t_list *ants)
 	{
 		move_ants(ants);
 		finished_ants = count_finished_ants(ants);
-		ft_putchar_fd('\n', 2);
+		ft_putchar_fd('\n', 1);
 	}
 }
