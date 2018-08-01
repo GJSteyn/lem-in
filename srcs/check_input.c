@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 16:39:13 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/26 14:09:08 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/08/01 10:45:09 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@ static int		valid_line(char *line)
 {
 	if (ft_strlen(line) == 0)
 		return (0);
+	if (line[0] == 'L')
+	{
+		ft_putstr_fd("Line: ", 2);
+		ft_putstr_fd(line, 2);
+		ft_putstr_fd(" starts with an L - that's bad", 2);
+		ft_error("");
+	}
 	if (is_comment(line) || is_room(line) || is_end(line) || is_start(line) ||
 		is_link(line) || is_command(line) || ft_is_num(line))
 		return (1);
@@ -82,9 +89,9 @@ int				valid_input(t_list *in)
 	while (in && (is_room((char*)in->content) || is_comment((char*)in->content)
 		|| is_start((char*)in->content) || is_end((char*)in->content)))
 		in = in->next;
-	if (!in || (!is_comment((char*)in->content) &&
-		!is_link((char*)in->content)))
-		ft_error("Link input error right after rooms");
+	// if (!in || (!is_comment((char*)in->content) &&
+	// 	!is_link((char*)in->content)))
+	// 	ft_error("Link input error right after rooms");
 	while (in && (is_link((char*)in->content) ||
 		is_comment((char*)in->content)))
 		in = in->next;

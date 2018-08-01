@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 05:47:26 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/31 12:11:28 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/08/01 10:46:41 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ static t_room		*get_room(char *name, t_list *rooms)
 			return ((t_room *)rooms->content);
 		rooms = rooms->next;
 	}
-	ft_error("Did not find the room :( (get_links.c)");
+	ft_putstr_fd("Did not find the room: ", 2);
+	ft_putstr_fd(name, 2);
+	ft_error("");
 	return (NULL);
 }
 
@@ -54,13 +56,10 @@ void				get_links(t_list *rooms, t_list *in)
 		else if (is_command((char*)in->content))
 			;
 		else if (is_link((char *)in->content))
-		{
-			ft_putstr_fd("Adding\n", 2);
 			add_conx(rooms, (char *)in->content);
-		}
 		else if (is_link((char*)in->next->content))
 		{
-			ft_putstr_fd("Bad line in links (get_links.c)", 2);
+			ft_putstr_fd("Bad line in links (get_links.c)\n", 2);
 			break ;
 		}
 		else if (ft_strlen((char*)in->content) == 0)

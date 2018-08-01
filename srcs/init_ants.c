@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:41:25 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/27 15:04:42 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/08/01 10:40:25 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ t_list				*init_ants(t_list *in, t_list *rooms)
 	else
 	{
 		num_ants = ft_atoi((char*)in->content);
-		if (num_ants == 0)
+		if (num_ants < 1)
 			ft_error("No ants? What's the point?");
 		start->occupied = 1;
 		while (idx <= (size_t)num_ants)

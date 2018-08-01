@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 05:49:53 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/08/01 07:55:42 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/08/01 10:52:59 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,7 @@ static void		run_instructions(t_list *instr, t_list *rooms, t_list *ants)
 	char	**split;
 	char	*room;
 	int		ant;
-	int		i;
-
+	int		i; 
 	i = 0;
 	while (instr)
 	{
