@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 11:30:38 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/28 14:10:34 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/08/01 07:41:49 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int				brute_end_dist(t_ant *ant, int first)
 		{
 			if (!first)
 				ft_putchar_fd(' ', 1);
-			move_ant(ant, best);
+			move_ant(ant, best, 0);
 			return (1);
 		}
 	}

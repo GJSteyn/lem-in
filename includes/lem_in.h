@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:16:32 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/31 09:14:00 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/08/01 07:41:37 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int					brute_end_dist(t_ant *ant, int first);
 
 void				get_heuristic(t_list *rooms);
 
-void				move_ant(t_ant *ant, t_room *room);
+void				move_ant(t_ant *ant, t_room *room, int checking);
 
 int					rooms_connect_to_end(t_list *rooms);
 
