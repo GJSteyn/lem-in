@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 16:39:13 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/08/02 06:48:48 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/08/02 07:07:35 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,14 +84,15 @@ int				valid_input(t_list *in)
 		ft_error("First input not number of ants");
 	in = in->next;
 	if (!in || (!is_room((char*)in->content) && !is_start((char*)in->content) &&
-		!is_end((char*)in->content)))
+		!is_end((char*)in->content) && !is_command((char*)in->content)))
 		ft_error("Room input error right after number of ants");
 	while (in && (is_room((char*)in->content) || is_comment((char*)in->content)
-		|| is_start((char*)in->content) || is_end((char*)in->content)))
+		|| is_start((char*)in->content) || is_end((char*)in->content) ||
+		is_command((char*)in->content)))
 		in = in->next;
-	// if (!in || (!is_comment((char*)in->content) &&
-	// 	!is_link((char*)in->content)))
-	// 	ft_error("Link input error right after rooms");
+	if (!in || (!is_comment((char*)in->content) &&
+		!is_link((char*)in->content) && !is_command((char*)in->content)))
+		ft_error("Link input error right after rooms");
 	while (in && (is_link((char*)in->content) ||
 		is_comment((char*)in->content)))
 		in = in->next;
