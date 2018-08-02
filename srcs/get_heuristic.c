@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 17:34:20 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/08/01 09:45:24 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/08/02 06:55:43 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,19 @@ static void			dist_from_end(t_list *rooms)
 	recurse_conx(end, dist);
 }
 
+static t_room		*get_start(t_list *rooms)
+{
+	while (((t_room*)rooms->content)->type != start)
+		rooms = rooms->next;
+	return ((t_room*)rooms->content);
+}
+
 void				get_heuristic(t_list *rooms)
 {
+	t_room		*start;
+
 	dist_from_end(rooms);
+	start = get_start(rooms);
+	if (start->heuristic == 0)
+		ft_error("Start does not connect to end");
 }
