@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/02 07:10:11 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/08/02 07:14:44 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/08/02 07:43:55 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void		check_connection(int ant, char *room, t_list *ants)
 	ft_error("!");
 }
 
-int		valid_move(int ant, char *room, t_list *ants, t_list *rooms)
+int			valid_move(int ant, char *room, t_list *ants, t_list *rooms)
 {
 	check_ant(ant, ants);
 	check_room(ant, room, rooms);

@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 05:49:53 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/08/02 07:23:04 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/08/02 07:43:44 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_room			*get_room(char *room, t_list *rooms)
 	return ((t_room*)rooms->content);
 }
 
-void		run_instructions(t_list *instr, t_list *rooms, t_list *ants)
+void			run_instructions(t_list *instr, t_list *rooms, t_list *ants)
 {
 	char	**split;
 	char	*room;
