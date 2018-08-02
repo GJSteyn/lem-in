@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 05:49:53 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/08/02 07:43:44 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/08/02 07:46:15 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_ant			*get_ant(int ant, t_list *ants)
 	return ((t_ant*)ants->content);
 }
 
-t_room			*get_room(char *room, t_list *rooms)
+t_room			*get_room_check(char *room, t_list *rooms)
 {
 	while (ft_strcmp(((t_room*)rooms->content)->name, room) != 0)
 		rooms = rooms->next;
