@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/22 13:16:32 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/08/01 07:41:37 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/08/02 07:22:54 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,67 +16,76 @@
 # include <string.h>
 # include "libft.h"
 
-typedef enum		e_rmflag
+typedef enum	e_rmflag
 {
 	start,
 	end,
 	normal
-}					t_rmflag;
+}				t_rmflag;
 
-typedef struct		s_room
+typedef struct	s_room
 {
-	size_t			idx;
-	int				occupied;
-	int				heuristic;
-	char			*name;
-	t_list			*conx;
-	t_vect2			coords;
-	t_rmflag		type;
-}					t_room;
+	size_t		idx;
+	int			occupied;
+	int			heuristic;
+	char		*name;
+	t_list		*conx;
+	t_vect2		coords;
+	t_rmflag	type;
+}				t_room;
 
-typedef struct		s_ant
+typedef struct	s_ant
 {
-	size_t			num;
-	t_room			*room;
-}					t_ant;
+	size_t		num;
+	t_room		*room;
+}				t_ant;
 
-int					is_end(char *str);
-int					is_start(char *str);
-int					is_comment(char *str);
-int					is_room(char *str);
-int					is_link(char *str);
-int					is_command(char *str);
+int				is_end(char *str);
+int				is_start(char *str);
+int				is_comment(char *str);
+int				is_room(char *str);
+int				is_link(char *str);
+int				is_command(char *str);
 
-int					valid_input(t_list *input);
+int				valid_input(t_list *input);
 
-t_list				*get_input(void);
+t_list			*get_input(void);
 
-t_list				*init_rooms(t_list *input);
+t_list			*init_rooms(t_list *input);
 
-t_list				*init_ants(t_list *input, t_list *rooms);
+t_list			*init_ants(t_list *input, t_list *rooms);
 
-void				get_links(t_list *rooms, t_list *input);
+void			get_links(t_list *rooms, t_list *input);
 
-void				find_path(t_list *ants);
+void			find_path(t_list *ants);
 
-int					brute_end_dist(t_ant *ant, int first);
+int				brute_end_dist(t_ant *ant, int first);
 
-void				get_heuristic(t_list *rooms);
+void			get_heuristic(t_list *rooms);
 
-void				move_ant(t_ant *ant, t_room *room, int checking);
+void			move_ant(t_ant *ant, t_room *room, int checking);
 
-int					rooms_connect_to_end(t_list *rooms);
+int				rooms_connect_to_end(t_list *rooms);
 
-int					valid_map(t_list *rooms);
+int				valid_map(t_list *rooms);
 
-void				print_input(t_list *input);
+void			print_input(t_list *input);
 
-void				destroy_rooms(t_list **rooms);
-void				destroy_ants(t_list **ants);
-void				destroy_input(t_list **input);
-void				destroy_lists(t_list **rooms, t_list **ants, t_list **in);
+void			destroy_rooms(t_list **rooms);
+void			destroy_ants(t_list **ants);
+void			destroy_input(t_list **input);
+void			destroy_lists(t_list **rooms, t_list **ants, t_list **in);
 
-int					is_instruction(char *line);
-t_list				*get_instructions(t_list *input);
+int				is_instruction(char *line);
+t_list			*get_instructions(t_list *input);
+
+void			check_ant(int ant, t_list *ants);
+void			check_room(int ant, char *room, t_list *rooms);
+void			check_connection(int ant, char *room, t_list *ants);
+int				valid_move(int ant, char *room, t_list *ants, t_list *rooms);
+t_ant			*get_ant(int ant, t_list *ants);
+t_room			*get_room(char *room, t_list *rooms);
+void			run_instructions(t_list *instr, t_list *rooms, t_list *ants);
+void			check_ants(t_list *ants);
 
 #endif
