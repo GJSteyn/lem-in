@@ -6,7 +6,7 @@
 #    By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/23 09:25:10 by gsteyn            #+#    #+#              #
-#    Updated: 2018/08/02 07:11:58 by gsteyn           ###   ########.fr        #
+#    Updated: 2018/08/02 07:49:19 by gsteyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ clean:
 	rm -rf $(OBJS)
 
 fclean: clean
+	make fclean -C libft
 	rm -rf $(NAME) $(LIBNAME)
 
 re: fclean all

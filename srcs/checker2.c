@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/02 07:10:11 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/08/02 07:43:55 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/08/23 13:10:04 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ int			valid_move(int ant, char *room, t_list *ants, t_list *rooms)
 	check_ant(ant, ants);
 	check_room(ant, room, rooms);
 	check_connection(ant, room, ants);
-	move_ant(get_ant(ant, ants), get_room(room, rooms), 1);
+	move_ant(get_ant(ant, ants), get_room_check(room, rooms), 1);
 	return (1);
 }
